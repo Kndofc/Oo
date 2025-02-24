@@ -22,7 +22,7 @@
                 Grid.Row="0"
                 FontAttributes="Bold"
                 FontSize="22"
-                Text="{Binding Name, StringFormat='Hello, {0}!'}" />
+                Text="{Binding Name, StringFormat='Olá, {0}!'}" />
 
             <controls:CategoriesListControl
                 Grid.Row="1"
@@ -62,7 +62,7 @@
                     FontAttributes="Bold"
                     FontSize="25"
                     HorizontalOptions="Center"
-                    Text="Current Order"
+                    Text="Pedido Atual"
                     TextColor="Black" />
             </VerticalStackLayout>
 
@@ -122,7 +122,7 @@
                                                         MinimumHeightRequest="30"
                                                         MinimumWidthRequest="30"
                                                         Source="minus.png"
-                                                        ToolTipProperties.Text="Decrease quantity" />
+                                                        ToolTipProperties.Text="Diminuir quantidade" />
                                                     <Label
                                                         Grid.Column="1"
                                                         BackgroundColor="White"
@@ -145,7 +145,7 @@
                                                         MinimumHeightRequest="30"
                                                         MinimumWidthRequest="30"
                                                         Source="plus.png"
-                                                        ToolTipProperties.Text="Increase quantity" />
+                                                        ToolTipProperties.Text="Aumentar quantidade" />
                                                 </Grid>
                                             </Grid>
                                         </VerticalStackLayout>
@@ -161,7 +161,7 @@
                                     MinimumHeightRequest="20"
                                     MinimumWidthRequest="20"
                                     Source="x.png"
-                                    ToolTipProperties.Text="Remove from current order"
+                                    ToolTipProperties.Text="Remover do pedido atual"
                                     VerticalOptions="Start" />
                             </Grid>
                         </DataTemplate>
@@ -199,7 +199,7 @@
                             Grid.Column="0"
                             Spacing="5">
                             <Label
-                                Text="Tax"
+                                Text="Imposto"
                                 TextColor="Black"
                                 VerticalOptions="Center" />
                             <Label
@@ -208,7 +208,7 @@
                                 Text="{Binding TaxPrecentage, StringFormat='{0}%'}"
                                 TextColor="Blue"
                                 TextDecorations="Underline"
-                                ToolTipProperties.Text="Click to change tax percentage"
+                                ToolTipProperties.Text="Clique para alterar o percentual de imposto"
                                 VerticalOptions="Center">
                                 <Label.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding TaxPercentageClickCommand}" />
@@ -259,16 +259,16 @@
                                 MinimumWidthRequest="25"
                                 Text="X"
                                 TextColor="White"
-                                ToolTipProperties.Text="Clear Current Order" />
+                                ToolTipProperties.Text="Limpar Pedido Atual" />
                             <Button
                                 Grid.Column="2"
                                 BackgroundColor="DarkOliveGreen"
                                 Command="{Binding PlaceOrderCommand}"
                                 MinimumHeightRequest="25"
                                 MinimumWidthRequest="25"
-                                Text="Paid Cash"
+                                Text="Pago em Dinheiro"
                                 TextColor="White"
-                                ToolTipProperties.Text="Close Order">
+                                ToolTipProperties.Text="Fechar Pedido">
                                 <Button.CommandParameter>
                                     <x:Boolean>true</x:Boolean>
                                 </Button.CommandParameter>
@@ -279,9 +279,9 @@
                                 Command="{Binding PlaceOrderCommand}"
                                 MinimumHeightRequest="25"
                                 MinimumWidthRequest="25"
-                                Text="Paid Online"
+                                Text="Pago Online"
                                 TextColor="White"
-                                ToolTipProperties.Text="Close Order">
+                                ToolTipProperties.Text="Fechar Pedido">
                                 <Button.CommandParameter>
                                     <x:Boolean>false</x:Boolean>
                                 </Button.CommandParameter>

@@ -39,7 +39,7 @@ namespace RestaurantPOS.ViewModels
         public decimal Total => Subtotal + TaxAmount;
 
         [ObservableProperty]
-        private string _name = "Guest";
+        private string _name = "Convidado";
 
         public HomeViewModel(DatabaseService databaseService, OrdersViewModel ordersViewModel, SettingsViewModel settingsViewModel)
         {
@@ -50,7 +50,7 @@ namespace RestaurantPOS.ViewModels
             CartItems.CollectionChanged += (sender, args) => RecalculateAmounts();
 
             WeakReferenceMessenger.Default.Register<MenuItemChangedMessage>(this);
-            WeakReferenceMessenger.Default.Register<NameChangedMessage>(this, (reciepent, message) => Name = message.Value);
+            WeakReferenceMessenger.Default.Register<NameChangedMessage>(this, (recipient, message) => Name = message.Value);
 
             TaxPrecentage = _settingsViewModel.GetTaxPercentage();
         }
@@ -84,7 +84,7 @@ namespace RestaurantPOS.ViewModels
         private async Task SelectCategoryAsync(int categoryId)
         {
             if (SelectedCategory?.Id == categoryId)
-                return; // Already selected
+                return; // Já selecionado
 
             IsLoading = true;
 
@@ -153,18 +153,18 @@ namespace RestaurantPOS.ViewModels
         [RelayCommand]
         private async Task TaxPercentageClickAsync()
         {
-            var result = await Shell.Current.DisplayPromptAsync("Tax Percentage", "Enter tax percentage", placeholder: "10", initialValue: TaxPrecentage.ToString());
+            var result = await Shell.Current.DisplayPromptAsync("Percentual de Imposto", "Digite o percentual de imposto", placeholder: "10", initialValue: TaxPrecentage.ToString());
             if (!string.IsNullOrWhiteSpace(result))
             {
                 if (!int.TryParse(result, out int enteredTaxPercentage))
                 {
-                    await Shell.Current.DisplayAlert("Invalid value", "Please enter a valid number", "OK");
+                    await Shell.Current.DisplayAlert("Valor inválido", "Por favor, insira um número válido", "OK");
                     return;
                 }
 
                 if (enteredTaxPercentage > 100 || enteredTaxPercentage < 0)
                 {
-                    await Shell.Current.DisplayAlert("Invalid value", "Tax percentage must be between 0 and 100", "OK");
+                    await Shell.Current.DisplayAlert("Valor inválido", "O percentual de imposto deve estar entre 0 e 100", "OK");
                     return;
                 }
 
@@ -179,7 +179,7 @@ namespace RestaurantPOS.ViewModels
         {
             if (CartItems.Count > 0)
             {
-                if (await Shell.Current.DisplayAlert("Clear Order", "Are you sure you want to clear the order?", "Yes", "No"))
+                if (await Shell.Current.DisplayAlert("Limpar Pedido", "Você tem certeza de que deseja limpar o pedido?", "Sim", "Não"))
                 {
                     CartItems.Clear();
                 }
@@ -194,7 +194,7 @@ namespace RestaurantPOS.ViewModels
                 return;
             }
 
-            if (await Shell.Current.DisplayAlert("Close Order", "Are you sure you want to close the order?", "Yes", "No"))
+            if (await Shell.Current.DisplayAlert("Fechar Pedido", "Você tem certeza de que deseja fechar o pedido?", "Sim", "Não"))
             {
                 IsLoading = true;
                 if (await _ordersViewModel.CreateOderAsync([.. CartItems], isPaidCash))
@@ -211,7 +211,6 @@ namespace RestaurantPOS.ViewModels
             var menuItem = MenuItems.FirstOrDefault(m => m.Id == model.Id);
             if (menuItem != null)
             {
-
                 if (!model.SelectedCategories.Any(c => c.Id == SelectedCategory.Id))
                 {
                     MenuItems = [.. MenuItems.Where(m => m.Id != model.Id)];
@@ -242,7 +241,6 @@ namespace RestaurantPOS.ViewModels
             var cartItem = CartItems.FirstOrDefault(i => i.ItemId == model.Id);
             if (cartItem != null)
             {
-
                 cartItem.Name = model.Name;
                 cartItem.Price = model.Price;
                 cartItem.Icon = model.Icon;
@@ -250,7 +248,6 @@ namespace RestaurantPOS.ViewModels
                 var itemIndex = CartItems.IndexOf(cartItem);
 
                 CartItems[itemIndex] = cartItem;
-
             }
         }
     }

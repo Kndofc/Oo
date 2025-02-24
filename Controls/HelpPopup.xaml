@@ -19,7 +19,7 @@
 
         <VerticalStackLayout>
 
-            <!--  Need help header bar  -->
+            <!--  Cabeçalho de ajuda  -->
             <Grid
                 Padding="15,8"
                 BackgroundColor="Maroon"
@@ -27,7 +27,7 @@
                 <Label
                     Grid.Column="0"
                     FontSize="18"
-                    Text="Need help?"
+                    Text="Precisa de ajuda?"
                     TextColor="White" />
                 <Label
                     Grid.Column="1"
@@ -46,26 +46,25 @@
                 </Label>
             </Grid>
 
-
             <VerticalStackLayout Padding="15" Spacing="10">
-                <!--  Envelope icon header  -->
+                <!--  Ícone de envelope  -->
                 <Image
                     HeightRequest="25"
                     HorizontalOptions="Center"
                     Source="envelope.png"
                     WidthRequest="25" />
-                <!--  Title  -->
+                <!--  Título  -->
                 <Label
                     FontSize="16"
                     HorizontalOptions="Center"
-                    Text="You can connect with me!"
+                    Text="Você pode entrar em contato comigo!"
                     TextColor="Black" />
 
-                <!--  Email address  -->
+                <!--  Endereço de e-mail  -->
                 <HorizontalStackLayout Spacing="5">
                     <Label
                         FontSize="16"
-                        Text="Email me at "
+                        Text="Envie um e-mail para "
                         TextColor="Black"
                         VerticalOptions="Center" />
                     <Label
@@ -74,7 +73,7 @@
                         Text="{x:Static controls:HelpPopup.Email}"
                         TextColor="Black"
                         TextDecorations="Underline"
-                        ToolTipProperties.Text="Click to send me an email"
+                        ToolTipProperties.Text="Clique para enviar um e-mail"
                         VerticalOptions="Center">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
@@ -85,7 +84,7 @@
                         HeightRequest="20"
                         HorizontalOptions="Center"
                         Source="copy.png"
-                        ToolTipProperties.Text="Copy to clipboard"
+                        ToolTipProperties.Text="Copiar para a área de transferência"
                         WidthRequest="20">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="CopyEmail_Tapped" />
@@ -94,7 +93,7 @@
                 </HorizontalStackLayout>
             </VerticalStackLayout>
 
-            <!--  Footer  -->
+            <!--  Rodapé  -->
             <Grid
                 Padding="15,5"
                 BackgroundColor="Maroon"
@@ -104,7 +103,7 @@
                     Grid.Column="0"
                     FontSize="14"
                     HorizontalOptions="Center"
-                    Text="Developed by:"
+                    Text="Desenvolvido por:"
                     TextColor="White"
                     VerticalOptions="Center" />
                 <Label
@@ -115,7 +114,7 @@
                     Text="Jonatandb"
                     TextColor="Yellow"
                     TextDecorations="Underline"
-                    ToolTipProperties.Text="Click to visit my website"
+                    ToolTipProperties.Text="Clique para visitar meu site"
                     VerticalOptions="Center" />
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Footer_Tapped" />

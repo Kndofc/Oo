@@ -22,7 +22,7 @@ namespace RestaurantPOS.ViewModels
             {
                 do
                 {
-                    name = await Shell.Current.DisplayPromptAsync("Your name", "Enter your name");
+                    name = await Shell.Current.DisplayPromptAsync("Seu nome", "Insira seu nome");
                 } while (string.IsNullOrWhiteSpace(name));
 
                 Preferences.Default.Set<string>(NameKey, name);

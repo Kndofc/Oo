@@ -25,16 +25,16 @@
     <ScrollView BindingContext="{x:Reference this}">
         <VerticalStackLayout Spacing="10">
             <VerticalStackLayout Spacing="2">
-                <Label Style="{StaticResource lbl}" Text="Name" />
+                <Label Style="{StaticResource lbl}" Text="Nome" />
                 <Entry
-                    Placeholder="Enter name"
+                    Placeholder="Digite o nome"
                     PlaceholderColor="Black"
                     Style="{StaticResource txt}"
                     Text="{Binding Item.Name}"
                     TextColor="Black" />
             </VerticalStackLayout>
             <VerticalStackLayout Spacing="2">
-                <Label Style="{StaticResource lbl}" Text="Image/Icon" />
+                <Label Style="{StaticResource lbl}" Text="Imagem/Ícone" />
                 <Border
                     BackgroundColor="Wheat"
                     HeightRequest="100"
@@ -56,28 +56,28 @@
                     Clicked="PickImageButton_Clicked"
                     HorizontalOptions="Center"
                     MinimumHeightRequest="30"
-                    Text="Pick Image"
+                    Text="Selecionar Imagem"
                     TextColor="White" />
             </VerticalStackLayout>
             <VerticalStackLayout Spacing="2">
-                <Label Style="{StaticResource lbl}" Text="Description" />
+                <Label Style="{StaticResource lbl}" Text="Descrição" />
                 <Editor
                     MinimumHeightRequest="100"
-                    Placeholder="Enter description"
+                    Placeholder="Digite a descrição"
                     Style="{StaticResource txt}"
                     Text="{Binding Item.Description}"
                     TextColor="Black" />
             </VerticalStackLayout>
             <VerticalStackLayout Spacing="2">
-                <Label Style="{StaticResource lbl}" Text="Price" />
+                <Label Style="{StaticResource lbl}" Text="Preço" />
                 <Entry
-                    Placeholder="Enter price"
+                    Placeholder="Digite o preço"
                     Style="{StaticResource txt}"
                     Text="{Binding Item.Price, Converter={StaticResource DecimalToStringConverter}}"
                     TextColor="Black" />
             </VerticalStackLayout>
             <VerticalStackLayout Spacing="2">
-                <Label Style="{StaticResource lbl}" Text="Categories" />
+                <Label Style="{StaticResource lbl}" Text="Categorias" />
                 <CollectionView ItemsSource="{Binding Item.Categories}">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout
@@ -128,14 +128,14 @@
                     BackgroundColor="red"
                     Command="{Binding CancelCommand}"
                     HorizontalOptions="Start"
-                    Text="Cancel"
+                    Text="Cancelar"
                     TextColor="White" />
 
                 <Button
                     Grid.Column="1"
                     BackgroundColor="DarkOliveGreen"
                     Command="{Binding SaveMenuItemCommand}"
-                    Text="Save"
+                    Text="Salvar"
                     TextColor="White" />
             </Grid>
         </VerticalStackLayout>

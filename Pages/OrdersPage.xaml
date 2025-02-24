@@ -36,7 +36,7 @@
                 Grid.Row="0"
                 FontAttributes="Bold"
                 FontSize="22"
-                Text="Orders" />
+                Text="Pedidos" />
 
             <Grid Grid.Row="1">
                 <Grid RowDefinitions="30, *">
@@ -45,23 +45,23 @@
                             Grid.Column="0"
                             Padding="5,0,0,0"
                             Style="{StaticResource th}"
-                            Text="Order Id" />
+                            Text="ID do Pedido" />
                         <Label
                             Grid.Column="1"
                             Style="{StaticResource th}"
-                            Text="Date" />
+                            Text="Data" />
                         <Label
                             Grid.Column="2"
                             Style="{StaticResource th}"
-                            Text="Amount Paid" />
+                            Text="Valor Pago" />
                         <Label
                             Grid.Column="3"
                             Style="{StaticResource th}"
-                            Text="Payment Mode" />
+                            Text="Forma de Pagamento" />
                         <Label
                             Grid.Column="4"
                             Style="{StaticResource th}"
-                            Text="No. of Items" />
+                            Text="Nº de Itens" />
                     </Grid>
                     <CollectionView Grid.Row="1" ItemsSource="{Binding Orders}">
                         <CollectionView.ItemsLayout>
@@ -106,7 +106,7 @@
                                         Text="{Binding TotalItemsCount, StringFormat='{0} Item(s)'}"
                                         TextColor="Blue"
                                         TextDecorations="Underline"
-                                        ToolTipProperties.Text="Click to view details">
+                                        ToolTipProperties.Text="Clique para ver detalhes">
                                         <Label.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:OrdersViewModel}}, Path=SelectOrderCommand}" CommandParameter="{Binding .}" />
                                         </Label.GestureRecognizers>
@@ -122,8 +122,8 @@
                                         HeightRequest="30"
                                         HorizontalOptions="Center"
                                         MinimumHeightRequest="25"
-                                        Text="View Details"
-                                        ToolTipProperties.Text="View order details"
+                                        Text="Ver Detalhes"
+                                        ToolTipProperties.Text="Ver detalhes do pedido"
                                         VerticalOptions="Center" />
                                     <BoxView
                                         Grid.Row="3"
@@ -167,7 +167,7 @@
                     FontSize="25"
                     HorizontalOptions="Center"
                     HorizontalTextAlignment="Center"
-                    Text="Selected Order Items"
+                    Text="Itens do Pedido Selecionado"
                     TextColor="Black" />
                 <ImageButton
                     Grid.Column="1"
@@ -179,7 +179,7 @@
                     MinimumHeightRequest="20"
                     MinimumWidthRequest="20"
                     Source="x.png"
-                    ToolTipProperties.Text="Clear Selection"
+                    ToolTipProperties.Text="Limpar seleção"
                     VerticalOptions="Center" />
             </Grid>
             <ContentView
@@ -239,8 +239,6 @@
                                                     HorizontalOptions="End"
                                                     Text="{Binding Amount, StringFormat='{0:C}'}"
                                                     TextColor="Maroon" />
-
-
                                             </Grid>
                                         </VerticalStackLayout>
                                     </Grid>
@@ -260,12 +258,12 @@
                                     FontAttributes="Bold"
                                     FontSize="25"
                                     HorizontalOptions="Center"
-                                    Text="No Order Selected"
+                                    Text="Nenhum Pedido Selecionado"
                                     TextColor="Maroon" />
                                 <Label
                                     HorizontalOptions="Center"
                                     HorizontalTextAlignment="Center"
-                                    Text="Please select an order to view its details."
+                                    Text="Por favor, selecione um pedido para ver seus detalhes."
                                     TextColor="Black" />
                             </VerticalStackLayout>
                         </Grid>
